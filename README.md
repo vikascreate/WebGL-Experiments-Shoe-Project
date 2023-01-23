@@ -3,6 +3,13 @@ Hi,This is an open source project,
 For future shoe online stores
 For Starting project do following steps
 <br></br>
-1.npm install
+1.
+```json
+npm install
+```
 <br></br>
-2.npm run dev
+2.
+```json
+npm run dev
+```
+

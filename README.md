@@ -4,12 +4,12 @@ For future shoe online stores
 For Starting project do following steps
 <br></br>
 1.
-```json
+```js
 npm install
 ```
 <br></br>
 2.
-```json
+```js
 npm run dev
 ```
 

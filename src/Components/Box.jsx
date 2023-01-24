@@ -18,7 +18,7 @@ export default function Box({position,color}){
         onPointerOver={(event) => setHover(true)}
         onPointerOut={(event) => setHover(false)}>
         <boxGeometry args={[3, 3, 3]} />
-        <meshPhongMaterial color={color} />
+        <meshBasicMaterial color={color} wireframe={true}/>
       </mesh>
     )
 }

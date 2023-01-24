@@ -14,7 +14,7 @@ const color=useControls('Color',{
   return (
     <div className="App">
       <NavBar/>
-      <BoxMUI component='main' sx={{ p: 6 ,position:'absolute',zIndex:1}}>
+      <BoxMUI component='main' sx={{ p: 6 ,zIndex:1}}>
       <h1>This Is WebGl Experiments Shoe Project</h1>
       <h3>Contribute at github.com/vikascreate</h3>
       <Paper elevation={16} sx={{height:'70vh',width:'80vw',marginBottom:'10vh',marginLeft:'3vw',marginRight:'3vw',opacity:'0.9'}}>

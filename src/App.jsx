@@ -6,7 +6,7 @@ import { OrbitControls } from '@react-three/drei';
 import { Paper ,Box as BoxMUI} from '@mui/material';
 import NavBar from './Components/NavBar';
 import { useControls } from 'leva';
-
+import Shoe from './Components/Shoe';
 function App() {
 const color=useControls('Color',{
   value:'green'
@@ -17,7 +17,8 @@ const color=useControls('Color',{
       <BoxMUI component='main' sx={{ p: 6 ,zIndex:1}}>
       <h1>This Is WebGl Experiments Shoe Project</h1>
       <h3>Contribute at github.com/vikascreate</h3>
-      <Paper elevation={16} sx={{height:'70vh',width:'80vw',marginBottom:'10vh',marginLeft:'3vw',marginRight:'3vw',opacity:'0.9'}}>
+      <Paper elevation={16} sx={{height:'70vh',width:'80vw',marginBottom:'10vh',marginLeft:'3vw',marginRight:'3vw',opacity:'0.93'}}>
+        <Shoe/>
       </Paper>
       </BoxMUI>
       <Canvas camera={{ position: [0, 0, 3] }} style={{height:'100%',position:'fixed'}}>

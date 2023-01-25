@@ -1,23 +1,35 @@
-import { Environment, OrbitControls } from '@react-three/drei';
+import { Environment, Gltf, OrbitControls } from '@react-three/drei';
 import { Canvas, useLoader } from '@react-three/fiber';
-import React from 'react';
+import { useEffect ,useState,useRef} from 'react';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import { Skeleton } from '@mui/material';
 import { Stats } from '@react-three/drei';
 import { useControls } from 'leva';
 function Shoe(props) {
-    const gltf=useLoader(GLTFLoader,'./models/shoe.glb',(e)=>
-    {
-      e.manager.onStart=(url,loaded,number)=>{
-        console.log(`Started at ${url}`)
-      }
-      e.manager.onProgress=(url,loaded,total)=>{
-        console.log(`total: ${loaded}`)
-      }
-      e.manager.onLoad=()=>{
-        console.log(`loaded`)
-      }
+  const [loaded,setloaded]=useState(true)
+  const manager=useRef(null)
+function LoadingScreen(){
+  return(
+    <Skeleton width='100%' height={'100%'} variant={'rectangular'}/>
+  )
+}
+const gltf=
+
+  useLoader(GLTFLoader,'./models/shoe.glb',(e)=>
+  {
+  // console.log(e)
+    e.manager.onLoad=()=>{
+      //setloaded(true)
+      console.log('loaded')
+     
     }
-    )
+    e.manager.onError=(url)=>{
+      console.error('error eccored')
+     
+    }
+ 
+  }
+  )
     // const setEnvironmentGround=useControls('Environment',{
     //     radius:{
     //         value:10,min:10,max:1000,step:1},
@@ -26,7 +38,8 @@ function Shoe(props) {
     // })
     return (
       <div style={{ height: "100%" }}>
-        <Canvas camera={{ position: [18, 18, 2] }}>
+        {
+        loaded?<Canvas camera={{ position: [18, 18, 2] }}>
           <Environment
             preset="dawn"
             background
@@ -36,14 +49,15 @@ function Shoe(props) {
               scale:99,// setEnvironmentGround.scale,
             }}
           />
-          <primitive object={gltf.scene} />
+          <primitive object={gltf.scene} ref={manager}/>
           <OrbitControls 
            autoRotate 
           enablePan={false} 
           maxPolarAngle={Math.PI/2-0.02}  
           maxDistance={10}   minDistance={3}    />
           {/* <Stats /> */}
-        </Canvas>
+        </Canvas>:
+        <LoadingScreen/>}
       </div>
     );
 }

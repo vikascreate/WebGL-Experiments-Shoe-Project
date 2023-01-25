@@ -2,22 +2,15 @@
 import './App.css'
 import { Canvas } from '@react-three/fiber';
 import Box from './Components/Box';
-import { Paper ,Box as BoxMUI} from '@mui/material';
+import { Paper ,Box as BoxMUI, Skeleton} from '@mui/material';
 import NavBar from './Components/NavBar';
 import { useControls } from 'leva';
 import Shoe from './Components/Shoe';
-import { LoadingManager } from 'three';
-import { useEffect } from 'react';
-const loadingManager=new LoadingManager;
+import { useEffect, useState } from 'react';
 function App() {
 // const color=useControls('Color',{
 //   value:'green'
 // })
-useEffect(()=>{
-loadingManager.onStart=(url,loaded,number)=>{
-  console.log(`loading Started at ${url}`)
-}
-},[])
   return (
     <div className="App">
       <NavBar/>
@@ -25,7 +18,7 @@ loadingManager.onStart=(url,loaded,number)=>{
       <h1>This Is WebGl Experiments Shoe Project</h1>
       <h3>Contribute at github.com/vikascreate</h3>
       <Paper elevation={16} sx={{height:'70vh',width:'80vw',marginBottom:'10vh',marginLeft:'3vw',marginRight:'3vw'}}>
-        <Shoe loadingManager={loadingManager}/>
+         <Shoe/>
       </Paper>
       </BoxMUI>
       <Canvas camera={{ position: [0, 0, 3] }} style={{height:'100%',position:'fixed'}}>

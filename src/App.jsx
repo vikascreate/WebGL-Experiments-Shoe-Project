@@ -7,9 +7,9 @@ import NavBar from './Components/NavBar';
 import { useControls } from 'leva';
 import Shoe from './Components/Shoe';
 function App() {
-const color=useControls('Color',{
-  value:'green'
-})
+// const color=useControls('Color',{
+//   value:'green'
+// })
   return (
     <div className="App">
       <NavBar/>
@@ -23,8 +23,8 @@ const color=useControls('Color',{
       <Canvas camera={{ position: [0, 0, 3] }} style={{height:'100%',position:'fixed'}}>
           <directionalLight position={[0,0,3]}/>
           <directionalLight position={[0,0,-3]}/>
-          <Box position={[-2, 0, 0]} color={color.value} />
-          <Box position={[2, 0, 0]} color={color.value}/>
+          <Box position={[-2, 0, 0]} color={'red'} />
+          <Box position={[2, 0, 0]} color={'red'}/>
       </Canvas>
     </div>
   );

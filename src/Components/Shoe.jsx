@@ -29,7 +29,7 @@ function Shoe(props) {
            autoRotate 
           enablePan={false} 
           maxPolarAngle={Math.PI/2-0.02}  
-          maxDistance={10}   minDistance={1}    />
+          maxDistance={10}   minDistance={3}    />
           {/* <Stats /> */}
         </Canvas>
       </div>

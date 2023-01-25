@@ -7,13 +7,11 @@ For Starting project do following steps
 ```js
 npm install
 ```
-<br></br>
 2.
 ```js
 npm run dev
 ```
-<h3>Hosted Project at</h3>
-<br></br>
+### Hosted Project at
 ```js
 https://webgl-experiments-shoe-project.web.app/
 ```

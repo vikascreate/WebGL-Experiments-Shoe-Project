@@ -6,10 +6,18 @@ import { Paper ,Box as BoxMUI} from '@mui/material';
 import NavBar from './Components/NavBar';
 import { useControls } from 'leva';
 import Shoe from './Components/Shoe';
+import { LoadingManager } from 'three';
+import { useEffect } from 'react';
+const loadingManager=new LoadingManager;
 function App() {
 // const color=useControls('Color',{
 //   value:'green'
 // })
+useEffect(()=>{
+loadingManager.onStart=(url,loaded,number)=>{
+  console.log(`loading Started at ${url}`)
+}
+},[])
   return (
     <div className="App">
       <NavBar/>
@@ -17,7 +25,7 @@ function App() {
       <h1>This Is WebGl Experiments Shoe Project</h1>
       <h3>Contribute at github.com/vikascreate</h3>
       <Paper elevation={16} sx={{height:'70vh',width:'80vw',marginBottom:'10vh',marginLeft:'3vw',marginRight:'3vw'}}>
-        <Shoe/>
+        <Shoe loadingManager={loadingManager}/>
       </Paper>
       </BoxMUI>
       <Canvas camera={{ position: [0, 0, 3] }} style={{height:'100%',position:'fixed'}}>

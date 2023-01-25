@@ -5,7 +5,19 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { Stats } from '@react-three/drei';
 import { useControls } from 'leva';
 function Shoe(props) {
-    const gltf=useLoader(GLTFLoader,'./models/shoe.glb')
+    const gltf=useLoader(GLTFLoader,'./models/shoe.glb',(e)=>
+    {
+      e.manager.onStart=(url,loaded,number)=>{
+        console.log(`Started at ${url}`)
+      }
+      e.manager.onProgress=(url,loaded,total)=>{
+        console.log(`total: ${loaded}`)
+      }
+      e.manager.onLoad=()=>{
+        console.log(`loaded`)
+      }
+    }
+    )
     // const setEnvironmentGround=useControls('Environment',{
     //     radius:{
     //         value:10,min:10,max:1000,step:1},

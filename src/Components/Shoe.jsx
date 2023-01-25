@@ -7,7 +7,7 @@ function Shoe(props) {
     const gltf=useLoader(GLTFLoader,'./models/shoe.glb')
     return (
         <div style={{height:'100%'}}>
-           <Canvas >
+           <Canvas camera={{position:[8,8,2]}}>
             <Environment preset='forest' background/>
             <primitive
             object={gltf.scene}/>

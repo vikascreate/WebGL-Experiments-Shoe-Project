@@ -6,13 +6,15 @@ import { Paper ,Box as BoxMUI, Skeleton} from '@mui/material';
 import NavBar from './Components/NavBar';
 import { useControls } from 'leva';
 import Shoe from './Components/Shoe';
-import { useEffect, useState } from 'react';
+import { useEffect, useState,Suspense } from 'react';
+import LoadinScreen from './Components/LoadinScreen';
 function App() {
 // const color=useControls('Color',{
 //   value:'green'
 // })
   return (
     <div className="App">
+       <Suspense fallback={<LoadinScreen first/>}>
       <NavBar/>
       <BoxMUI component='main' sx={{ p: 6 ,zIndex:1}}>
       <h1>This Is WebGl Experiments Shoe Project</h1>
@@ -21,13 +23,15 @@ function App() {
          <Shoe/>
       </Paper>
       </BoxMUI>
-      <Canvas camera={{ position: [0, 0, 3] }} style={{height:'100%',position:'fixed'}}>
+      <Canvas camera={{ position: [0, 0, 3] }} style={{height:'100%',position:'fixed',backgroundColor:'white'}}>
           <directionalLight position={[0,0,3]}/>
           <directionalLight position={[0,0,-3]}/>
           <Box position={[-2, 0, 0]} color={'red'} />
           <Box position={[2, 0, 0]} color={'red'}/>
       </Canvas>
-    </div>
+      </Suspense>
+   </div>
+   // <LoadinScreen first/>
   );
 }
 

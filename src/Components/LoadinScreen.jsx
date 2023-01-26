@@ -4,7 +4,7 @@ import Shoe from '../assets/img/Shoe.gif'
 import Blob from "../assets/img/blob.gif"
 function LoadinScreen({first}) {
     return (
-      <div className='ImgDiv'>
+      <div style={{display:'flex',overflow:'hidden',alignItems:'center',justifyContent:'center',position:'relative',width:'100%',margin:'auto'}}>
         {/* <Skeleton width="100%" height={"100%"} variant={"rectangular"} /> */}
         {first?<img
           src={Blob}
@@ -21,12 +21,6 @@ function LoadinScreen({first}) {
         <img
           src={Shoe}
           alt={"wait for loading"}
-          style={{
-            display: "block",
-            padding:'auto',
-            margin:'auto',
-            width: "50%",
-          }}
         ></img>}
       </div>
     );

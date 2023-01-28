@@ -59,6 +59,7 @@ function NavBar({toggleDarkMode,darkMode}) {
               backdropFilter: blur("15px"),
               WebkitBackdropFilter: blur("15px"),
               background:dark?blueGrey[800]:'white',
+              transition:'background 2s ease-out',
               filter: blur("10px"),
             }}
           >

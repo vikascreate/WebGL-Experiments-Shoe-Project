@@ -15,6 +15,7 @@
     "@mui/material": "^5.11.5",
     "@react-three/drei": "^9.54.1",
     "@react-three/fiber": "^8.10.1",
+    "@react-three/postprocessing": "^2.7.0",
     "@types/three": "^0.148.0",
     "firebase": "^9.16.0",
     "leva": "^0.9.34",

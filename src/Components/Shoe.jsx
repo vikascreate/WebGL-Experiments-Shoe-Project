@@ -17,7 +17,7 @@ function Shoe(props) {
   // })
   return (
     <div style={{ height: "100%" }}>
-      <Suspense fallback={<LoadinScreen/>}>
+      {/* <Suspense fallback={<LoadinScreen first={false}/>}> */}
         <Canvas camera={{ position: [18, 18, 2] }}>
           <Environment
             preset="dawn"
@@ -38,8 +38,7 @@ function Shoe(props) {
           />
           {/* <Stats /> */}
         </Canvas>
-        </Suspense>
-     //   <LoadinScreen/>
+        {/* </Suspense> */}
     </div>
   );
 }

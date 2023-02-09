@@ -16,7 +16,7 @@ function App() {
 // const color=useControls('Color',{
 //   value:'green'
 // })
-const [darkMode,setdarkMode]=useState(true)
+const [darkMode,setdarkMode]=useState(false)
 function toggleDarkMode(){
  // console.log(darkMode)
   setdarkMode(!darkMode)

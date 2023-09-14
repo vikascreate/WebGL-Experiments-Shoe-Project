@@ -16,7 +16,7 @@ function Shoe({darkMode}) {
       {/* <Suspense fallback={<LoadinScreen first={false}/>}> */}
         <Canvas camera={{ position: [18, 18, 2] }}>
           <Environment
-            preset={darkMode?'night':"dawn"}
+            files={'./models/golf_course_sunrise_1k.hdr'}
             ground={{
               radius: 71, //setEnvironmentGround.radius,
               height: 21, //setEnvironmentGround.height,

@@ -13,7 +13,7 @@ const navItems = ['Home', 'About', 'Contact'];
 function NavBar({toggleDarkMode,darkMode}) {
   const [mobileOpen,setMobileOpen]=React.useState(false)
   const [openDrawer,setOpenDrawer]=React.useState(false)
-  const [dark,setDark]=React.useState(darkMode||true)
+  const [dark,setDark]=React.useState(darkMode||false)
   useEffect(()=>{
     if(window.innerWidth<480){
       setMobileOpen(true)
